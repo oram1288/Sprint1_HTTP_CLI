@@ -1,32 +1,34 @@
 package com.keyin.domain;
 
-
-import java.util.Objects;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Airport {
 
-    private long id;
+    private Long id;
+
     private String name;
     private String code;
 
-    public Airport() {
-    }
+    private Cities cityName;
 
-    public Airport(String code) {
-        this.code = code;
-    }
+    private List<Aircraft> aircrafts = new ArrayList<>(Aircraft);
 
-    public Airport(long id, String name, String code) {
-        this.id = id;
+    // Constructors
+    public Airport() {}
+
+    public Airport(String name, String code, Cities cityName) {
         this.name = name;
         this.code = code;
+        this.cityName = cityName;
     }
 
-    public long getId() {
+    // Getters and Setters
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -46,16 +48,30 @@ public class Airport {
         this.code = code;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Airport airport = (Airport) o;
-        return Objects.equals(code, airport.code);
+    public Cities getCityName() {
+        return cityName;
     }
 
+    public void setCityName(Cities cityName) {
+        this.cityName = cityName;
+    }
+
+    public List<Aircraft> getAircrafts() {
+        return aircrafts;
+    }
+
+    public void setAircrafts(List<Aircraft> aircrafts) {
+        this.aircrafts = aircrafts;
+    }
+
+    // toString method
     @Override
-    public int hashCode() {
-        return Objects.hash(code);
+    public String toString() {
+        return "Airport{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", code='" + code + '\'' +
+                ", city=" + cityName +
+                '}';
     }
 }
