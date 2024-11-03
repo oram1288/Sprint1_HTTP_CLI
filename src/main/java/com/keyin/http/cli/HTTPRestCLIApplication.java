@@ -29,9 +29,10 @@ public class HTTPRestCLIApplication {
         StringBuffer report = new StringBuffer();
 
         for (Airport airport : airports) {
-            report.append(airport.getName());
-            report.append(" - ");
-            report.append(airport.getCode());
+
+            report.append("Airport ID: ").append(airport.getId()).append(", ");
+            report.append("Airport Code: ").append(airport.getCode()).append(", ");
+            report.append("Airport Name: ").append(airport.getName()).append(", ");
 
             if (airports.indexOf(airport) != (airports.size() - 1)) {
                 report.append(",");
