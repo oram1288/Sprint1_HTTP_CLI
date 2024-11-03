@@ -4,35 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87dcb579-f526-4b65-8c51-026a2893a459" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/keyin/domain/Cities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/keyin/domain/Airport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keyin/domain/Airport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/keyin/http/cli/HTTPRestCLIApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keyin/http/cli/HTTPRestCLIApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/keyin/http/client/RESTClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keyin/http/client/RESTClient.java" afterDir="false" />
-    </list>
+    <list default="true" id="87dcb579-f526-4b65-8c51-026a2893a459" name="Changes" comment="Cities Test and updated" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Cities-test" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "oram1288"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;oram1288&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/oram1288/Sprint1_HTTP_CLI.git",
-    "accountId": "79b73629-f525-4441-be62-01774c7f65e0"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/oram1288/Sprint1_HTTP_CLI.git&quot;,
+    &quot;accountId&quot;: &quot;79b73629-f525-4441-be62-01774c7f65e0&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -45,6 +43,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Unnamed.executor": "Debug",
+    "Maven.Sprint1_HTTP_CLI [clean].executor": "Run",
+    "Maven.Sprint1_HTTP_CLI [install].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
@@ -75,6 +75,20 @@
       <option name="presentableId" value="Default" />
       <updated>1729553211542</updated>
     </task>
+    <task id="LOCAL-00001" summary="Cities Test and updated">
+      <option name="closed" value="true" />
+      <created>1730668892123</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1730668892123</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Test creation, first commit" />
+    <MESSAGE value="Cities Test and updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cities Test and updated" />
   </component>
 </project>
