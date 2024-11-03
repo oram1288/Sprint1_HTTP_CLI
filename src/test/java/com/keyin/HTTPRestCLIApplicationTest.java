@@ -1,6 +1,7 @@
 package com.keyin;
 
 import com.keyin.domain.Airport;
+import com.keyin.domain.Cities;
 import com.keyin.http.cli.HTTPRestCLIApplication;
 import com.keyin.http.client.RESTClient;
 import org.junit.jupiter.api.Assertions;
@@ -22,19 +23,40 @@ public class HTTPRestCLIApplicationTest {
     public void testGenerateAirportReport() {
         HTTPRestCLIApplication httpRestCLIApplicationUnderTest = new HTTPRestCLIApplication();
 
-        Airport stJohnsAirport = new Airport();
-        stJohnsAirport.setCode("YYT");
-        stJohnsAirport.setName("St. John's Airport");
-        stJohnsAirport.setId(1L);
+        Airport orlandoAirport = new Airport();
+        orlandoAirport.setId(9L);
+        orlandoAirport.setCode("MCO");
+        orlandoAirport.setName("Orlando International Airport");
 
         List<Airport> airportList = new ArrayList<Airport>();
-        airportList.add(stJohnsAirport);
+        airportList.add(orlandoAirport);
 
         Mockito.when(mockRESTClient.getAllAirports()).thenReturn(airportList);
 
         httpRestCLIApplicationUnderTest.setRestClient(mockRESTClient);
 
-        Assertions.assertTrue(httpRestCLIApplicationUnderTest.generateAirportReport().contains("YYT"));
+        Assertions.assertTrue(httpRestCLIApplicationUnderTest.generateAirportReport().contains("MCO"));
+    }
+
+    @Test
+    public void testGenerateCityReport() {
+        HTTPRestCLIApplication httpRestCLIApplicationUnderTest = new HTTPRestCLIApplication();
+
+        RESTClient mockRESTClient = Mockito.mock(RESTClient.class);
+
+        Cities torontoCity = new Cities();
+        torontoCity.setCityId(2L);
+        torontoCity.setCityName("Toronto");
+        torontoCity.setCountry("Canada");
+
+        List<Cities> cityList = new ArrayList<>();
+        cityList.add(torontoCity);
+
+        Mockito.when(mockRESTClient.getAllCities()).thenReturn(cityList);
+
+        httpRestCLIApplicationUnderTest.setRestClient(mockRESTClient);
+
+        Assertions.assertTrue(httpRestCLIApplicationUnderTest.generateCityReport().contains("Toronto"));
     }
 
 

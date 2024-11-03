@@ -1,0 +1,126 @@
+Index: src/test/java/com/keyin/HTTPRestCLIApplicationTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/com/keyin/HTTPRestCLIApplicationTest.java b/src/test/java/com/keyin/HTTPRestCLIApplicationTest.java
+new file mode 100644
+--- /dev/null	(date 1730662171396)
++++ b/src/test/java/com/keyin/HTTPRestCLIApplicationTest.java	(date 1730662171396)
+@@ -0,0 +1,41 @@
++package com.keyin;
++
++import com.keyin.domain.Airport;
++import com.keyin.http.cli.HTTPRestCLIApplication;
++import com.keyin.http.client.RESTClient;
++import org.junit.jupiter.api.Assertions;
++import org.junit.jupiter.api.Test;
++import org.junit.jupiter.api.extension.ExtendWith;
++import org.mockito.Mock;
++import org.mockito.Mockito;
++import org.mockito.junit.jupiter.MockitoExtension;
++
++import java.util.ArrayList;
++import java.util.List;
++
++@ExtendWith(MockitoExtension.class)
++public class HTTPRestCLIApplicationTest {
++    @Mock
++    private RESTClient mockRESTClient;
++
++    @Test
++    public void testGenerateAirportReport() {
++        HTTPRestCLIApplication httpRestCLIApplicationUnderTest = new HTTPRestCLIApplication();
++
++        Airport stJohnsAirport = new Airport();
++        stJohnsAirport.setCode("YYT");
++        stJohnsAirport.setName("St. John's Airport");
++        stJohnsAirport.setId(1L);
++
++        List<Airport> airportList = new ArrayList<Airport>();
++        airportList.add(stJohnsAirport);
++
++        Mockito.when(mockRESTClient.getAllAirports()).thenReturn(airportList);
++
++        httpRestCLIApplicationUnderTest.setRestClient(mockRESTClient);
++
++        Assertions.assertTrue(httpRestCLIApplicationUnderTest.generateAirportReport().contains("YYT"));
++    }
++
++
++}
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"87dcb579-f526-4b65-8c51-026a2893a459\" name=\"Changes\" comment=\"\" />\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n    <option name=\"UPDATE_TYPE\" value=\"REBASE\" />\n  </component>\n  <component name=\"GitHubPullRequestSearchHistory\">{\n  &quot;lastFilter&quot;: {\n    &quot;state&quot;: &quot;OPEN&quot;,\n    &quot;assignee&quot;: &quot;oram1288&quot;\n  }\n}</component>\n  <component name=\"GithubPullRequestsUISettings\">{\n  &quot;selectedUrlAndAccountId&quot;: {\n    &quot;url&quot;: &quot;https://github.com/oram1288/Sprint1_HTTP_CLI.git&quot;,\n    &quot;accountId&quot;: &quot;79b73629-f525-4441-be62-01774c7f65e0&quot;\n  }\n}</component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 5\n}</component>\n  <component name=\"ProjectId\" id=\"2nlgjEwKMruzwQgTt3Lxp8F1LVo\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"Application.Unnamed.executor\": \"Debug\",\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\n    \"git-widget-placeholder\": \"main\",\n    \"kotlin-language-version-configured\": \"true\",\n    \"last_opened_file_path\": \"/Users/keyinstudent/DevOps/Sprint1_HTTP_CLI\",\n    \"project.structure.last.edited\": \"Project\",\n    \"project.structure.proportion\": \"0.0\",\n    \"project.structure.side.proportion\": \"0.2\"\n  }\n}]]></component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyClassDialog.RECENTS_KEY\">\n      <recent name=\"com.keyin\" />\n      <recent name=\"com.keyin.domain\" />\n    </key>\n  </component>\n  <component name=\"RunManager\">\n    <configuration name=\"Unnamed\" type=\"Application\" factoryName=\"Application\" nameIsGenerated=\"true\">\n      <module name=\"Sprint1_HTTP_CLI\" />\n      <option name=\"PROGRAM_PARAMETERS\" value=\"http://localhost:8080/listAllCities\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"87dcb579-f526-4b65-8c51-026a2893a459\" name=\"Changes\" comment=\"\" />\n      <created>1729553211542</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1729553211542</updated>\n    </task>\n    <servers />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision f636926c6295ed55b7f5d925ac3aa198ff1a5a03)
++++ b/.idea/workspace.xml	(date 1730662187481)
+@@ -4,7 +4,15 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="87dcb579-f526-4b65-8c51-026a2893a459" name="Changes" comment="" />
++    <list default="true" id="87dcb579-f526-4b65-8c51-026a2893a459" name="Changes" comment="">
++      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/com/keyin/domain/Cities.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/keyin/domain/Airport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keyin/domain/Airport.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/keyin/http/cli/HTTPRestCLIApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keyin/http/cli/HTTPRestCLIApplication.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/keyin/http/client/RESTClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keyin/http/client/RESTClient.java" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -12,20 +20,19 @@
+   </component>
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+-    <option name="UPDATE_TYPE" value="REBASE" />
+   </component>
+-  <component name="GitHubPullRequestSearchHistory">{
+-  &quot;lastFilter&quot;: {
+-    &quot;state&quot;: &quot;OPEN&quot;,
+-    &quot;assignee&quot;: &quot;oram1288&quot;
++  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
++  "lastFilter": {
++    "state": "OPEN",
++    "assignee": "oram1288"
+   }
+-}</component>
+-  <component name="GithubPullRequestsUISettings">{
+-  &quot;selectedUrlAndAccountId&quot;: {
+-    &quot;url&quot;: &quot;https://github.com/oram1288/Sprint1_HTTP_CLI.git&quot;,
+-    &quot;accountId&quot;: &quot;79b73629-f525-4441-be62-01774c7f65e0&quot;
++}]]></component>
++  <component name="GithubPullRequestsUISettings"><![CDATA[{
++  "selectedUrlAndAccountId": {
++    "url": "https://github.com/oram1288/Sprint1_HTTP_CLI.git",
++    "accountId": "79b73629-f525-4441-be62-01774c7f65e0"
+   }
+-}</component>
++}]]></component>
+   <component name="ProjectColorInfo">{
+   &quot;associatedIndex&quot;: 5
+ }</component>
+@@ -42,15 +49,11 @@
+     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+     "git-widget-placeholder": "main",
+     "kotlin-language-version-configured": "true",
+-    "last_opened_file_path": "/Users/keyinstudent/DevOps/Sprint1_HTTP_CLI",
+-    "project.structure.last.edited": "Project",
+-    "project.structure.proportion": "0.0",
+-    "project.structure.side.proportion": "0.2"
++    "last_opened_file_path": "/Users/keyinstudent/DevOps/Sprint1_HTTP_CLI"
+   }
+ }]]></component>
+   <component name="RecentsManager">
+     <key name="CopyClassDialog.RECENTS_KEY">
+-      <recent name="com.keyin" />
+       <recent name="com.keyin.domain" />
+     </key>
+   </component>
