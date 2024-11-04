@@ -1,5 +1,6 @@
 package com.keyin.http.cli;
 
+import com.keyin.domain.Passengers;
 import com.keyin.domain.Airport;
 import com.keyin.domain.Cities;
 import com.keyin.http.client.RESTClient;
@@ -83,6 +84,25 @@ public class HTTPRestCLIApplication {
 
         System.out.println(report.toString());
 
+        return report.toString();
+    }
+    //Passenger
+    public String generatePassengerReport() {
+        List<Passengers> passengers = getRestClient().getAllPassengers();
+
+        StringBuffer report = new StringBuffer();
+        for (Passengers passenger : passengers) {
+            report.append("Passenger ID: ").append(passenger.getPassengerID()).append(", ");
+            report.append("Passenger Name: ").append(passenger.getPassengerName()).append(", ");
+            report.append("Passenger Phone: ").append(passenger.getPassengerPhone()).append(", ");
+            report.append("Passenger Email: ").append(passenger.getPassengerEmail()).append(", ");
+            report.append("Passenger Address: ").append(passenger.getPassengerAddress()).append(", ");
+
+            if(passengers.indexOf(passenger) != (passengers.size() - 1)) {
+                report.append(",");
+            }
+        }
+        System.out.println(report.toString());
         return report.toString();
     }
 

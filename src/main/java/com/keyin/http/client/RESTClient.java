@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.keyin.domain.Airport;
 import com.keyin.domain.Cities;
+import com.keyin.domain.Passengers;
 
 import java.io.IOException;
 import java.net.URI;
@@ -104,6 +105,35 @@ public class RESTClient {
         cities = mapper.readValue(responseBody, new TypeReference<List<Cities>>(){});
 
         return cities;
+    }
+    //Passengers
+    public List<Passengers> getAllPassengers(){
+        List<Passengers> passengers = new ArrayList<>();
+
+        HttpRequest request = HttpRequest.newBuilder().uri(URI.create(serverURL)).build();
+
+        try{
+            HttpResponse<String> repsonse = client.send(request, HttpResponse.BodyHandlers.ofString());
+            if (repsonse.statusCode()==200) {
+                System.out.println("***** " + repsonse.body());
+                passengers = buildPassengerListFromResponse(repsonse.body());
+            } else{
+                System.out.println("Error Status Code: " + repsonse.statusCode());
+            }
+
+            passengers = buildPassengerListFromResponse(repsonse.body());
+        }catch (IOException | InterruptedException e){
+            e.printStackTrace();
+        }
+        return passengers;
+    }
+
+    public List<Passengers> buildPassengerListFromResponse(String responseBody) throws JsonProcessingException {
+        List<Passengers> passengers = new ArrayList<>();
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
+        passengers = mapper.readValue(responseBody, new TypeReference<List<Passengers>>(){});
+        return passengers;
     }
 
     public String getServerURL() {
