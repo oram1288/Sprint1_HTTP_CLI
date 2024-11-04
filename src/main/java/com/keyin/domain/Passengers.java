@@ -1,7 +1,7 @@
 package com.keyin.domain;
 
 public class Passengers {
-    private int passengerID;
+    private Long passengerID;
     private String passengerName;
     private String passengerAddress;
     private String passengerPhone;
@@ -9,8 +9,6 @@ public class Passengers {
     int num = 0;
 
     public Passengers() {
-        this.passengerID = num;
-        num++;
 
     }
     public  Passengers(String name, String address, String phone, String email) {
@@ -18,15 +16,13 @@ public class Passengers {
         this.passengerAddress = address;
         this.passengerPhone = phone;
         this.passengerEmail = email;
-        this.passengerID = num;
-        num++;
     }
 
-    public int getPassengerID() {
+    public Long getPassengerID() {
         return passengerID;
     }
 
-    public void setPassengerID(int passengerID) {
+    public void setPassengerID(Long passengerID) {
         this.passengerID = passengerID;
     }
     public String getPassengerName() {

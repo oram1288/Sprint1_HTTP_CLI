@@ -2,6 +2,7 @@ package com.keyin;
 
 import com.keyin.domain.Airport;
 import com.keyin.domain.Cities;
+import com.keyin.domain.Passengers;
 import com.keyin.http.cli.HTTPRestCLIApplication;
 import com.keyin.http.client.RESTClient;
 import org.junit.jupiter.api.Assertions;
@@ -59,5 +60,24 @@ public class HTTPRestCLIApplicationTest {
         Assertions.assertTrue(httpRestCLIApplicationUnderTest.generateCityReport().contains("Toronto"));
     }
 
+    @Test
+    public void testGeneratePassengerReport() {
+        HTTPRestCLIApplication httpRestCLIApplicationUnderTest = new HTTPRestCLIApplication();
 
+        RESTClient mockRESTClient = Mockito.mock(RESTClient.class);
+
+        Passengers newPassengers = new Passengers();
+        newPassengers.setPassengerID(4L);
+        newPassengers.setPassengerName("Bob");
+        newPassengers.setPassengerEmail("bob@example");
+
+        List<Passengers> passengersList = new ArrayList<>();
+        passengersList.add(newPassengers);
+
+        Mockito.when(mockRESTClient.getAllPassengers()).thenReturn(passengersList);
+
+        httpRestCLIApplicationUnderTest.setRestClient(mockRESTClient);
+
+        Assertions.assertTrue(httpRestCLIApplicationUnderTest.generatePassengerReport().contains("Bob"));
+    }
 }
