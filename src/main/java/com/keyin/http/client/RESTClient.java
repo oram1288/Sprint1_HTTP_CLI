@@ -107,6 +107,7 @@ public class RESTClient {
 
         return cities;
     }
+
     //Passengers
     public List<Passengers> getAllPassengers(){
         List<Passengers> passengers = new ArrayList<>();

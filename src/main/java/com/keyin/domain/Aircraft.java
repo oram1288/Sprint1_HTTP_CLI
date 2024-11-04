@@ -15,7 +15,7 @@ public class Aircraft {
 
     private List<Airport> airports = new ArrayList<Airport>();
 
-    private List<Passengers> passengers = new ArrayList<>(Passengers);
+    private List<Passengers> passengers = new ArrayList<>();
 
     // Constructors
     public Aircraft() {}

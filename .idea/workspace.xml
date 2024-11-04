@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87dcb579-f526-4b65-8c51-026a2893a459" name="Changes" comment="Aircraft commit" />
+    <list default="true" id="87dcb579-f526-4b65-8c51-026a2893a459" name="Changes" comment="workspace">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/keyin/domain/Aircraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keyin/domain/Aircraft.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/keyin/http/cli/HTTPRestCLIApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keyin/http/cli/HTTPRestCLIApplication.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,6 +64,7 @@
   </component>
   <component name="RunManager">
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.keyin.http.cli.HTTPRestCLIApplication" />
       <module name="Sprint1_HTTP_CLI" />
       <option name="PROGRAM_PARAMETERS" value="http://localhost:8080/listAllCities" />
       <method v="2">
@@ -107,6 +113,7 @@
     <MESSAGE value="Cities Test and updated" />
     <MESSAGE value="update" />
     <MESSAGE value="Aircraft commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aircraft commit" />
+    <MESSAGE value="workspace" />
+    <option name="LAST_COMMIT_MESSAGE" value="workspace" />
   </component>
 </project>

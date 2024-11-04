@@ -151,6 +151,12 @@ public class HTTPRestCLIApplication {
             } else if (serverURL.contains("listAllCities")) {
                 String cityReport = cliApp.generateCityReport();
                 System.out.println("City Report:\n" + cityReport);
+            } else if (serverURL.contains("listAllAircraft")) {
+                String aircraftReport = cliApp.generateAircraftReport();
+                System.out.println("Aircraft Report:\n" + aircraftReport);
+            }  else if (serverURL.contains("listAllPassengers")) {
+                String passengerReport = cliApp.generatePassengerReport();
+                System.out.println("Passenger Report:\n" + passengerReport);
             }else {
                 cliApp.generateAirportReport();
             }
