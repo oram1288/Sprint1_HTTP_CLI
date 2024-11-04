@@ -12,7 +12,7 @@ public class Airport {
 
     private Cities cityName;
 
-    private List<Aircraft> aircrafts = new ArrayList<>(Aircraft);
+    private List<Aircraft> aircrafts = new ArrayList<Aircraft>();
 
     // Constructors
     public Airport() {}

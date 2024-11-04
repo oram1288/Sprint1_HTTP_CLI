@@ -1,5 +1,6 @@
 package com.keyin;
 
+import com.keyin.domain.Aircraft;
 import com.keyin.domain.Airport;
 import com.keyin.domain.Cities;
 import com.keyin.http.cli.HTTPRestCLIApplication;
@@ -58,6 +59,30 @@ public class HTTPRestCLIApplicationTest {
 
         Assertions.assertTrue(httpRestCLIApplicationUnderTest.generateCityReport().contains("Toronto"));
     }
+
+    @Test
+    public void testGenerateAircraftReport() {
+        HTTPRestCLIApplication httpRestCLIApplicationUnderTest = new HTTPRestCLIApplication();
+
+        RESTClient mockRESTClient = Mockito.mock(RESTClient.class);
+
+        Aircraft airlineAircraft = new Aircraft();
+        airlineAircraft.setId(2L);
+        airlineAircraft.setType("Boeing 737");
+        airlineAircraft.setAirlineName("Air Canada");
+        airlineAircraft.setNumberOfPassengers(162);
+
+        List<Aircraft> aircraftList = new ArrayList<>();
+        aircraftList.add(airlineAircraft);
+
+        Mockito.when(mockRESTClient.getAllAircraft()).thenReturn(aircraftList);
+
+        httpRestCLIApplicationUnderTest.setRestClient(mockRESTClient);
+
+        Assertions.assertTrue(httpRestCLIApplicationUnderTest.generateAircraftReport().contains("Air Canada"));
+
+    }
+
 
 
 }
