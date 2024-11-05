@@ -137,7 +137,7 @@ public class HTTPRestCLIApplication {
 
         HTTPRestCLIApplication cliApp = new HTTPRestCLIApplication();
 
-        String serverURL = args[0]; // "http://localhost:8080/
+        String serverURL = args[0]; // "http://localhost:8080/listAllCities";
 
         if (serverURL != null && !serverURL.isEmpty()) {
 
