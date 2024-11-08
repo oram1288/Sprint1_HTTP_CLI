@@ -47,9 +47,6 @@ public class HTTPRestCLIApplication {
         return report.toString();
     }
 
-    private void listGreetings() {
-        System.out.println(getRestClient().getResponseFromHTTPRequest());
-    }
 
     // City
     public String generateCityReport() {
@@ -146,14 +143,15 @@ public class HTTPRestCLIApplication {
 
             cliApp.setRestClient(restClient);
 
-            if (serverURL.contains("greeting")) {
-                cliApp.listGreetings();
-            } else if (serverURL.contains("listAllCities")) {
+            if (serverURL.contains("listAllCities")) {
                 String cityReport = cliApp.generateCityReport();
                 System.out.println("City Report:\n" + cityReport);
             } else if (serverURL.contains("listAllAirports")) {
                 String airportReport = cliApp.generateAirportReport();
                 System.out.println("Airport Report:\n" + airportReport);
+            } else if (serverURL.contains("getAirportsByCityId/2")) {
+                String airportReport = cliApp.generateAirportReport();
+                System.out.println("Airports By City:\n" + airportReport);
             } else if (serverURL.contains("listAllAircrafts")) {
                 String aircraftReport = cliApp.generateAircraftReport();
                 System.out.println("Aircraft Report:\n" + aircraftReport);
